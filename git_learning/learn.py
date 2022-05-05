@@ -5,5 +5,9 @@ salary = 50000.0
 print("Ваша ЗП на сегодня ", locale.format_string("%.2f", salary, grouping=True), sep="")
 #locale.setlocale(locale.LC_ALL, loc) #вернуть локаль
 
-input("Введите число: ")
-print(n + 5)
+#input("Введите число: ")
+print(5 + 5)
+
+def plus(a, b):
+    return a+b
+print(plus(10, 10))
