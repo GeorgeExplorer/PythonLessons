@@ -1,4 +1,4 @@
-t1 = input("Скажите, за что пьем: ")
+a1 = input("Скажите, за что пьем: ")
 h1 = ["за здоровье", "За здоровье", "за здравие", "За здравие", "за ваше здроровье", "За ваше здроровье"]
 h2 = ["за ваше здравие", "За ваше здравие", "на здоровье", "На здоровье"]
 h3 = ["здоровье", "Здоровье", "здравие", "Здравие", "здоровье!", "Здоровье!", "здравие!", "Здравие!"]
@@ -12,33 +12,45 @@ hap2 = ["счастье", "Счастье", "счастье!", "Счастье!"
 hap1_1 = ["за счастье!", "За счастье!", "за ваше счастье!", "За ваше счастье!", "на счастье!", "На счастье!"]
 hap_sum = hap1 + hap2 + hap1_1
 ans2 = "за счастье не пьют — за него борятся"
+
 lov1 = ["за любовь", "За любовь", "за вашу любовь", "За вашу любовь", "любовь", "Любовь", "любовь!", "Любовь!"]
 lov2 = ["за любовь!", "За любовь!", "за ваше любовь!", "За ваше любовь!", "на любовь!", "На любовь!"]
 lov_sum = lov1 + lov2
-ans3 = "за любовь не пьют — ею занимаются"
+ans3 = "за любовь не пьют — ею занимаются :)))"
 
 toast_sum = h_sum + hap_sum + lov_sum
 ans4 = "за здоровье не пьют — за него молятся, за счастье не пьют — за него борятся, за любовь не пьют — ею занимаются!"
 
-if t1 in h_sum:
+t1 = a1.replace(',', '')
+
+list_t1 = t1.split()
+list_t2 = []
+
+for i in list_t1:
+    if i in toast_sum:
+        list_t2.append(i)
+
+if len(list_t1) == len(list_t2):
+    print(ans4)
+
+elif t1 in h_sum:
     print(ans1)
     t2 = input("А еще за что? ")
     if t2 in hap_sum:
         print(ans2)
         t3 = input("А еще за что? ")
-    elif t2 in lov_sum:
-        print(ans3)
-        t2
-    elif t2 in toast_sum:
-        print(ans4)
+        if t3 in lov_sum:
+            print(ans3)
+        elif t3 in toast_sum:
+            print(ans4)
 elif t1 in hap_sum:
     print(ans2)
 elif t1 in lov_sum:
     print(ans3)
-elif t1 in toast_sum:
+elif list_t1 in toast_sum:
     print(ans4)
 
-elif t1 not in h_sum:
+elif t1 not in h_sum and t1 not in hap_sum and t1 not in lov_sum:
     t2_1 = input("Произнесите нормальный тост: ")
     if t2_1 in h_sum:
         print(ans1)
