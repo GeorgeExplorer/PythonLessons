@@ -43,7 +43,8 @@ elif t1 in h_sum:
             print(ans3)
         elif t3 in toast_sum:
             print(ans4)
-elif t1 in hap_sum:
+elif \
+        1 in hap_sum:
     print(ans2)
 elif t1 in lov_sum:
     print(ans3)
