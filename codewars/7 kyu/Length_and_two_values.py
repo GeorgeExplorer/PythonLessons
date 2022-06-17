@@ -1,4 +1,4 @@
-# Solution to task
+# Test to change default repository in the GitHub
 
 n = 5
 value_1 = "four"
